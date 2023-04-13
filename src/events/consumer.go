@@ -38,8 +38,9 @@ func (h messageHandler) ProcessMessage(message message.InboundMessage) {
 		messageBody = string(payload)
 	}
 
+	fmt.Printf("Message Dump %s \n", message)
+
 	business.ProcessBookMessageEvent(messageBody)
-	// fmt.Printf("Message Dump %s \n", message)
 }
 
 func ConnectReceiver(numberOfConns int) {
